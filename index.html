@@ -2938,6 +2938,8 @@ function triggerAbility(){
    pendingCollapseTurns = 2;
    if (whiteTurn || !isVsAI) alert("💥 붕괴가 시작되었습니다! 2턴 후 a·h파일과 1·8랭크가 붕괴합니다!");
    success = true;
+   // 온라인에서는 능력 사용 즉시 예약된 붕괴 상태를 상대에게 동기화한다.
+   if (isOnline) broadcastState();
  } else if(curCharKey==="gaeun"){
    schrodingerMode = !schrodingerMode;
    render();
